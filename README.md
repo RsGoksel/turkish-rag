@@ -20,7 +20,7 @@ Tam pipeline (LLM dahil hazır kurulum) gerekiyorsa: [Turkish-LLM-RAG](https://g
 | BAAI/bge-m3 (çok dilli) | ~52* | 568M | 8192 token |  |
 | multilingual-e5-large-instruct | ~51* | 560M | 514 token | |
 
-\* Türkçe alt görev ortalaması 
+\* |Türkçe alt görev ortalaması | 
 
 Mursit, ModernBERT-large mimarisinde 112.7B token Türkçe-ağırlıklı korpus üzerinde sıfırdan ön eğitilmiş; Türkçenin sondan eklemeli morfolojisi için 59K kelimelik özel tokenizer kullanır. 
 
