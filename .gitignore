@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Test / Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# RAG-specific - büyük model dosyaları repo'ya girmesin
+models/
+chroma_db/
+*.safetensors
+*.gguf
+*.bin
+*.onnx
+
+# Veri / log
+data/private/
+*.log
+.env
+.env.local
