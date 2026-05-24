@@ -449,13 +449,9 @@ assert r.retrieve("KVKK ne zaman?", k=1)[0].meta["doc_id"] == "kvkk_6698"
 
 ---
 
-## Belgeler
-
 - [Türkçe embedding modelleri leaderboard'u (TR-MTEB)](docs/01-leaderboard-ve-model-secimi.md)
+İlgili: [Turkish-LLM-RAG](https://github.com/RsGoksel/Turkish-LLM-RAG) — bu kütüphane üzerine LLM (Trendyol-LLM-8B-T1, Ollama, OpenAI) entegrasyonu eklenmiş tam pipeline.
 
-
-  year   = {2025}
-}
 ```
 
-İlgili: [Turkish-LLM-RAG](https://github.com/RsGoksel/Turkish-LLM-RAG) — bu kütüphane üzerine LLM (Trendyol-LLM-8B-T1, Ollama, OpenAI) entegrasyonu eklenmiş tam pipeline.
+
