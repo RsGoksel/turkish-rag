@@ -1,31 +1,30 @@
 # Turkish RAG
 
-Türkçe metinler üzerinde anlamsal arama (semantic retrieval) ve doküman geri çağırma (document retrieval) için kütüphane. Çekirdek: TR-MTEB lideri **Mursit-Large-TR-Retrieval** + **ChromaDB**. Üretim üzerine inşa edilebilir; kendi LLM'in, ajan'ın veya analiz pipeline'ınla birleştir.
+Türkçe metinler üzerinde anlamsal arama (semantic retrieval) ve doküman geri çağırma (document retrieval) için kütüphanedir. 
+Çekirdek: TR-MTEB lideri **Mursit-Large-TR-Retrieval** + **ChromaDB**. Üretim üzerine inşa edilebilir; lokal LLM, agent veya analiz pipeline ile birleştirilebilir.
 
 Tam pipeline (LLM dahil hazır kurulum) gerekiyorsa: [Turkish-LLM-RAG](https://github.com/RsGoksel/Turkish-LLM-RAG)
 
-## Ne işe yarar
-
-- **Türkçe doküman tabanları** üzerinde sorgu-doküman eşleştirme (sözleşme arama, mevzuat arama, müşteri destek bilgi tabanı)
+**Türkçe doküman tabanları** üzerinde sorgu-doküman eşleştirme (sözleşme arama, mevzuat arama, müşteri destek bilgi tabanı)
 - **Semantik benzerlik** ölçümü (kelime eşleşmesinden bağımsız anlam eşleşmesi)
 - **RAG pipeline'larının** retrieval katmanı (LLM bileşeniyle birleştirmek üzere)
 - **Sınıflandırma / kümeleme** için cümle/paragraf embedding'leri
 - **Çoğaltma tespiti (deduplication)** ve içerik kümelemesi
 
-## Neden Mursit-Large-TR-Retrieval
+ (Baysan et al., EMNLP 2025) üzerinde lider olması sebebiyle Türkçe için resmi benchmark olan **TR-MTEB** ele alınmıştır.
 
-Türkçe için resmi benchmark olan **TR-MTEB** (Baysan et al., EMNLP 2025) üzerinde lider:
-
-| Model | TR-MTEB | Parametre | Bağlam | Lisans |
+| Model | TR-MTEB | Parametre | Bağlam |  |
 |---|---|---|---|---|
-| **Mursit-Large-TR-Retrieval** | **56.87** | 403M | 2048 token | Apache 2.0 |
-| Mursit-Base-TR-Retrieval | 55.86 | 155M | 2048 token | Apache 2.0 |
-| BAAI/bge-m3 (çok dilli) | ~52* | 568M | 8192 token | MIT |
-| multilingual-e5-large-instruct | ~51* | 560M | 514 token | MIT |
+| **Mursit-Large-TR-Retrieval** | **56.87** | 403M | 2048 token | |
+| Mursit-Base-TR-Retrieval | 55.86 | 155M | 2048 token |  |
+| BAAI/bge-m3 (çok dilli) | ~52* | 568M | 8192 token |  |
+| multilingual-e5-large-instruct | ~51* | 560M | 514 token | |
 
-\* Türkçe alt görev ortalaması (resmi TR-MTEB değil)
+\* Türkçe alt görev ortalaması 
 
-Mursit, ModernBERT-large mimarisinde 112.7B token Türkçe-ağırlıklı korpus üzerinde sıfırdan ön eğitilmiş; Türkçenin sondan eklemeli morfolojisi için 59K kelimelik özel tokenizer kullanır. Tam karşılaştırma: [docs/01-leaderboard-ve-model-secimi.md](docs/01-leaderboard-ve-model-secimi.md)
+Mursit, ModernBERT-large mimarisinde 112.7B token Türkçe-ağırlıklı korpus üzerinde sıfırdan ön eğitilmiş; Türkçenin sondan eklemeli morfolojisi için 59K kelimelik özel tokenizer kullanır. 
+
+Tam karşılaştırma için bkz: [docs/01-leaderboard-ve-model-secimi.md](docs/01-leaderboard-ve-model-secimi.md)
 
 ---
 
@@ -454,17 +453,7 @@ assert r.retrieve("KVKK ne zaman?", k=1)[0].meta["doc_id"] == "kvkk_6698"
 
 - [Türkçe embedding modelleri leaderboard'u (TR-MTEB)](docs/01-leaderboard-ve-model-secimi.md)
 
-## Lisans
 
-Apache 2.0. Kullanılan modeller kendi lisansları altındadır; Mursit-Large-TR-Retrieval Apache 2.0 (ticari kullanım serbest).
-
-## Atıflar
-
-```bibtex
-@inproceedings{baysan2025trmteb,
-  title  = {TR-MTEB: A Comprehensive Benchmark and Embedding Model Suite for Turkish Sentence Representations},
-  author = {Baysan, M. S. and Bebek, I. and G\"ung\"or, T.},
-  booktitle = {Findings of EMNLP 2025},
   year   = {2025}
 }
 ```
